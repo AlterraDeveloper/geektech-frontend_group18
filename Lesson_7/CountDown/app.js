@@ -11,13 +11,12 @@ function GetDiffDate(date) {
   return date - dateNow;
 }
 
-function ExtractDaysFromDiffDate(diffDate) {
-  return Math.floor(diffDate / (24 * 60 * 60 * 1000));
-}
+const ExtractDaysFromDiffDate = (diffDate) =>
+  Math.floor(diffDate / (24 * 60 * 60 * 1000));
 
-function ExtractHoursFromDiffDate(diffDate) {
+const ExtractHoursFromDiffDate = function (diffDate) {
   return Math.floor((diffDate % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60));
-}
+};
 
 function ExtractMinutesFromDiffDate(diffDate) {
   return Math.floor((diffDate % (60 * 60 * 1000)) / (1000 * 60));
