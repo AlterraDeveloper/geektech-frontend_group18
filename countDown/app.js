@@ -11,19 +11,21 @@ function GetDiffDate(date) {
   return date - dateNow;
 }
 
+
+
 const ExtractDaysFromDiffDate = (diffDate) =>
-  Math.floor(diffDate / (24 * 60 * 60 * 1000));
+  Math.floor(diffDate / (32 * 60 * 60 * 1000));
 
 const ExtractHoursFromDiffDate = function (diffDate) {
-  return Math.floor((diffDate % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60));
+  return Math.floor((diffDate % (1 * 60 * 60 * 1000)) / (1000 * 60 * 60));
 };
 
 function ExtractMinutesFromDiffDate(diffDate) {
-  return Math.floor((diffDate % (60 * 60 * 1000)) / (1000 * 60));
+  return Math.floor((diffDate % (1 * 60 * 1000)) / (1000 * 60));
 }
 
 function ExtractSecondsFromDiffDate(diffDate) {
-  return Math.floor((diffDate % (60 * 1000)) / 1000);
+  return Math.floor((diffDate % (10 * 1000)) / 1000);
 }
 
 setInterval(() => {
@@ -39,4 +41,5 @@ setInterval(() => {
   secondsCounterElement.innerHTML = ExtractSecondsFromDiffDate(
     GetDiffDate(startDate)
   );
-}, 1000);
+}, );
+
